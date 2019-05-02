@@ -1,0 +1,250 @@
+/*layout*/
+.body{
+    margin: 0;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 10vh;
+    grid-row-gap: 2rem;
+    grid-template-areas:
+            "nav nav nav"
+            ". header ."
+            "about about about"
+            "img who who"
+            "contact-left . contact-right"
+            "footer footer footer";
+}
+
+
+#header{
+    grid-area: header;
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+    height: 100vh;
+
+}
+#nav{
+    grid-area: nav;
+    justify-self: flex-end;
+    padding-top: 10px;
+    position: fixed;
+    right: 20px;
+}
+
+#about{
+    grid-area: about;
+    min-height: 100vh;
+    background-color: white;
+    transition: 0.3s all;
+    color: white;
+    text-align: center;
+}
+
+
+#img{
+    grid-area: img;
+}
+
+#who{
+    grid-area: who;
+    display: flex;
+}
+#contact-left{
+    grid-area: contact-left;
+    grid-column: 1/3;
+}
+
+#contact-right{
+    grid-area: contact-right;
+    grid-column: 3/4;
+}
+
+#footer{
+    grid-area: footer;
+}
+
+/*card styling*/
+
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    max-width: 200px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.card-image{
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+}
+
+.card-containter{
+    padding: 10px 16px;
+}
+/*nav styling*/
+
+.link{
+    list-style: none;
+    display: inline-block;
+    padding-left: 1em;
+}
+
+.link a{
+    color: black;
+}
+
+li.link:last-child{
+    margin-right: 10px;
+}
+
+/*header styling*/
+
+#logo{
+    max-width:50vw;
+    height:auto;
+    justify-content: center;
+    animation-name: logo;
+    animation-duration: 5s;
+}
+
+/*navbar fade if not using js*/
+/*#nav:hover .nav-show{*/
+    /*visibility: visible;*/
+/*}*/
+
+#nav .nav-show{
+    visibility: hidden;
+    width: 400px;
+    height: 50px;
+}
+
+/*box animation*/
+.box{
+    width: 100vw;
+    height: 60px;
+    background-color: #00335b;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    animation-name: box-slide;
+    animation-duration: 4s;
+}
+
+.box2{
+    width: 60px;
+    height: 0vh;
+    background-color: #00335b;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    animation-name: box-slide2;
+    animation-duration: 3s;
+    animation-delay: 1s;
+}
+
+.box3{
+    width: 0vw;
+    height: 60px;
+    background-color: #00335b;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    animation-name: box-slide3;
+    animation-duration: 2s;
+    animation-delay: 2s;
+}
+
+.box4{
+    width: 60px;
+    height: 0vh;
+    background-color: #00335b;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    animation-name: box-slide4;
+    animation-duration: 1s;
+    animation-delay: 3s;
+}
+
+@keyframes box-slide {
+    0%{top:0; left:0; width: 0vw}
+    25%{width:100vw;}
+    100%{width:100vw;}
+}
+
+@keyframes box-slide2 {
+    0%{top:0; right: 0;}
+    33%{height:100vh;}
+    100%{height:100vh;}
+}
+
+@keyframes box-slide3 {
+    0%{bottom:0; right:0;}
+    50%{width:100vw;}
+    100%{width:100vw;}
+}
+
+@keyframes box-slide4 {
+    0%{bottom: 0; left:0;}
+    100%{height:100vh;}
+}
+
+/*logo animation*/
+
+@keyframes logo {
+    0%{opacity: 0}
+    80%{opacity: 0}
+    90%{opacity: .5}
+    100%{opacity: 1}
+}
+
+/*bio styling*/
+
+.img-wrapper{
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.bio-pic{
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+}
+
+/*color transition*/
+.offsetTop{
+    margin:50vh;
+    background-color: #333333;
+    position: fixed;
+}
+
+/*handhake image*/
+.handshake{
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.handshake-img{
+    width: auto;
+    height: 100%;
+}
+
+/*about styling*/
+.slide{
+    padding: 60px 50px
+}
+
+.about-pic{
+    height: auto;
+    width: 200px;
+    padding: 80px 40px 0px 40px;
+}
